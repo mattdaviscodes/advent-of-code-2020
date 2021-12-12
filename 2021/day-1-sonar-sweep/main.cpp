@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "readFile.h"
+#include "../common/readFile.h"
 
 void partOne(std::vector<int>& input) {
   int increases = 0;

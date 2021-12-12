@@ -1,15 +1,19 @@
+# Compiler options
 COMPILER=g++
 OPTIONS=-g -std=c++17 -Wall
 COMPILE=$(COMPILER) $(OPTIONS)
+
+# Directories
 BUILD=build
+COMMON=../common
 
-all: build main
+all: build common main
 
-main.out: main.cpp $(BUILD)/readFile.o
-	$(COMPILE) main.cpp $(BUILD)/readFile.o -o main.out
+main: main.cpp common
+	$(COMPILE) main.cpp $(COMMON)/readFile.o -o main.out
 
-$(BUILD)/readFile.o: readFile.cpp readFile.h
-	$(COMPILE) -c readFile.cpp -o $(BUILD)/readFile.o
+common:
+	$(COMPILE) -c $(COMMON)/readFile.cpp -o $(COMMON)/readFile.o
 
 build:
 	mkdir -p $(BUILD)

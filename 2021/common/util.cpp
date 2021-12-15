@@ -2,9 +2,9 @@
 #include <vector>
 #include <fstream>
 
-#include "common.h"
+#include "util.h"
 
-std::vector<std::string> Common::readFileLines(const std::string &filename)
+std::vector<std::string> Util::readFileLines(const std::string &filename)
 {
     std::vector<std::string> v;
     std::string line;

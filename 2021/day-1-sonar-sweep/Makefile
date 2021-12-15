@@ -7,13 +7,13 @@ COMPILE=$(COMPILER) $(OPTIONS)
 BUILD=build
 COMMON=../common
 
-all: build common main
+all: build util main
 
-main: main.cpp common
-	$(COMPILE) main.cpp $(COMMON)/common.o -o main.out
+main: main.cpp util
+	$(COMPILE) main.cpp $(COMMON)/util.o -o main.out
 
-common:
-	$(COMPILE) -c $(COMMON)/common.cpp -o $(COMMON)/common.o
+util:
+	$(COMPILE) -c $(COMMON)/util.cpp -o $(COMMON)/util.o
 
 build:
 	mkdir -p $(BUILD)

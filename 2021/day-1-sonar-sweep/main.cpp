@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "../common/common.h"
+#include "../common/util.h"
 
 std::vector<int> vecStringsToInts(std::vector<std::string> &input)
 {
@@ -53,7 +53,7 @@ void partTwo(std::vector<int>& input) {
 
 int main()
 {
-  std::vector<std::string> input = Common::readFileLines("input.txt");
+  std::vector<std::string> input = Util::readFileLines("input.txt");
   std::vector<int> ints = vecStringsToInts(input);
 
   partOne(ints);

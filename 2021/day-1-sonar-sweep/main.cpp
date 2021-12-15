@@ -4,7 +4,6 @@
 #include <vector>
 
 #include "../common/common.h"
-#include "../common/readFile.h"
 
 std::vector<int> vecStringsToInts(std::vector<std::string> &input)
 {

@@ -10,10 +10,10 @@ COMMON=../common
 all: build common main
 
 main: main.cpp common
-	$(COMPILE) main.cpp $(COMMON)/readFile.o -o main.out
+	$(COMPILE) main.cpp $(COMMON)/common.o -o main.out
 
 common:
-	$(COMPILE) -c $(COMMON)/readFile.cpp -o $(COMMON)/readFile.o
+	$(COMPILE) -c $(COMMON)/common.cpp -o $(COMMON)/common.o
 
 build:
 	mkdir -p $(BUILD)

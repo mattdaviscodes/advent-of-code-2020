@@ -2,7 +2,17 @@
 #include <fstream>
 #include <string>
 #include <vector>
+
+#include "../common/common.h"
 #include "../common/readFile.h"
+
+std::vector<int> vecStringsToInts(std::vector<std::string> &input)
+{
+  std::vector<int> ints;
+  std::transform(input.begin(), input.end(), std::back_inserter(ints), [](const std::string &str)
+                 { return std::stoi(str); });
+  return ints;
+}
 
 void partOne(std::vector<int>& input) {
   int increases = 0;
@@ -44,10 +54,11 @@ void partTwo(std::vector<int>& input) {
 
 int main()
 {
-  std::vector<int> input = readFile("input.txt");
+  std::vector<std::string> input = Common::readFileLines("input.txt");
+  std::vector<int> ints = vecStringsToInts(input);
 
-  partOne(input);
-  partTwo(input);
+  partOne(ints);
+  partTwo(ints);
 
   return 0;
 }
